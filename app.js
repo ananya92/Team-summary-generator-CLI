@@ -1,8 +1,12 @@
 const inquirer = require(`inquirer`);
-
-var manager = {};
-var engineers = [];
-var interns = [];
+const fs = require(`fs`);
+const mainStr = require("./templates/main");
+const managerStr = require("./templates/manager");
+const engineerStr = require("./templates/engineer");
+const internStr = require("./templates/intern");
+var managerDiv;
+var engineersDiv;
+var internsDiv;
 
 const employeeQuestions = [
     {
@@ -52,10 +56,8 @@ inquirer.prompt(
     employeeQuestions.concat(managerQuestions)
 
 ).then(function(data) {
-    manager.name = data.name;
-    manager.id = data.id;
-    manager.email = data.email;
-    manager.number = data.number;
+    managerDiv = managerStr.getManagerStr(data);
+    console.log(managerDiv);
     isAddEngineer();
 });
 
@@ -116,6 +118,18 @@ function isAddIntern() {
     ]).then(function(data) {
         if(data.isIntern) {
             addIntern();
+        }
+        else {
+            writeToFile(mainStr.getMainStr(managerDiv, engineersDiv, internsDiv));
+        }
+    });
+}
+
+function writeToFile(data) {
+        
+    fs.writeFile("./output/team_summary.html", data, function(err) {
+        if (err) {
+            return console.log(err);
         }
     });
 }

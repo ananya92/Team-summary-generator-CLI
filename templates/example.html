@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Team summary</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    </head>
+    <body>
+        <header class="page-header text-center">
+            <h1>Team Summary</h1>
+        </header>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">${data.name}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Employee ID: ${data.id}</h6>
+                            <p class="card-text">${data.email}</p>
+                            <p class="card-text">${data.number}</p>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row"></div>
+            <div class="row"></div>
+        </div>
+    </body>
+</html>
