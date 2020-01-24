@@ -1,2 +1,14 @@
 # Team-summary-generator-CLI
-Node CLI application that takes in information about employees in a software engineering team and generates an HTML webpage that displays summaries for each person in the team.
+ A software engineering team generator command line application using Node.js. The application prompts the user for information about the team manager and the team members. The user can input any number of team members, with a mix of engineers and interns. The application generates an HTML file that displays a nicely formatted team roster based on the information provided by the user.
+
+## User Story
+```
+As a manager
+I want to generate a webpage that displays my team's basic info
+so that I have quick access to emails and GitHub profiles
+```
+
+* Used the [Inquirer npm package](https://github.com/SBoudrias/Inquirer.js/) to prompt the user for their email, id, and specific information based on their role with the company.
+
+* Application runs as a Node CLI to gather information about each employee.
+
