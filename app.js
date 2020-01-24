@@ -4,9 +4,9 @@ const mainStr = require("./templates/main");
 const managerStr = require("./templates/manager");
 const engineerStr = require("./templates/engineer");
 const internStr = require("./templates/intern");
-var managerDiv;
-var engineersDiv;
-var internsDiv;
+var managerDiv = "";
+var engineersDiv = "";
+var internsDiv = "";
 
 const employeeQuestions = [
     {
@@ -65,13 +65,7 @@ function addEngineer() {
     inquirer.prompt(
         employeeQuestions.concat(engineerQuestions)
     ).then(function(data) {
-        var engineer = {
-            name : data.name,
-            id : data.id,
-            email : data.email,
-            github : data.github
-        }
-        engineers.push(engineer);
+        engineersDiv += engineerStr.getEngineerStr(data);
         isAddEngineer();
     });
 }
@@ -97,13 +91,7 @@ function addIntern() {
     inquirer.prompt(
         employeeQuestions.concat(internQuestions)
     ).then(function(data) {
-        var intern = {
-            name : data.name,
-            id : data.id,
-            email : data.email,
-            school : data.school
-        }
-        interns.push(intern);
+        internsDiv += internStr.getInternStr(data);
         isAddIntern();
     });
 }
