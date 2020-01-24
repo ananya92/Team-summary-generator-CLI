@@ -37,7 +37,7 @@ const managerQuestions = [
 const engineerQuestions = [
     {
         type: "input",
-        message: "Enter github URL:",
+        message: "Enter github username:",
         name: "github"
     }
 ];
@@ -45,7 +45,7 @@ const engineerQuestions = [
 const internQuestions = [
     {
         type: "input",
-        message: "Enter school name:",
+        message: "Enter college name:",
         name: "school"
     }
 ];
@@ -57,7 +57,6 @@ inquirer.prompt(
 
 ).then(function(data) {
     managerDiv = managerStr.getManagerStr(data);
-    console.log(managerDiv);
     isAddEngineer();
 });
 
