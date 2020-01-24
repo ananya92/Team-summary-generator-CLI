@@ -12,17 +12,41 @@ const employeeQuestions = [
     {
         type: "input",
         message: "Enter name:",
-        name: "name"
+        name: "name",
+        validate: function( value ) {
+            var pass = value.match(/^[a-z ,.'-]+$/i);
+            if (pass) {
+              return true;
+            } else {
+              return "Please enter valid name.";
+            }
+          }
     },
     {
         type: "input",
         message: "Enter employee ID:",
-        name: "id"
+        name: "id",
+        validate: function( value ) {
+            var pass = value.match(/^\d{6}$/i);
+            if (pass) {
+              return true;
+            } else {
+              return "Please enter a 6-digit numeric id.";
+            }
+          }
     },
     {
         type: "input",
         message: "Enter email ID:",
-        name: "email"
+        name: "email",
+        validate: function( value ) {
+            var pass = value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i);
+            if (pass) {
+              return true;
+            } else {
+              return "Please enter valid email id.";
+            }
+          }
     }
 ];
 
@@ -30,7 +54,15 @@ const managerQuestions = [
     {
         type: "input",
         message: "Enter phone number:",
-        name: "number"
+        name: "number",
+        validate: function( value ) {
+            var pass = value.match(/\d{10}$/i);
+            if (pass) {
+              return true;
+            } else {
+              return "Please enter a valid 10-digit phone number";
+            }
+          }
     }
 ];
 
@@ -38,7 +70,8 @@ const engineerQuestions = [
     {
         type: "input",
         message: "Enter github username:",
-        name: "github"
+        name: "github",
+        default: "NA"
     }
 ];
 
@@ -46,7 +79,8 @@ const internQuestions = [
     {
         type: "input",
         message: "Enter college name:",
-        name: "school"
+        name: "school",
+        default: "NA"
     }
 ];
 
