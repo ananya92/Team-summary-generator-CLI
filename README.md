@@ -13,3 +13,5 @@ As a manager
 I want to generate a webpage that displays my team's basic info
 so that I have quick access to emails and GitHub profiles
 ```
+## Application Screenshot
+![Project Snapshot](https://github.com/ananya92/My-Portfolio/blob/master/src/components/projects/img/pr7_1.JPG)
